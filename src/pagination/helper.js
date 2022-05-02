@@ -5,27 +5,14 @@ export default class PaginationClass{
     this.stateObj = stateObj;
     this.setStateObj =  setStateObj;
   }
-
-  switchViewMore(){
-    this.setStateObj({
-      ...this.stateObj,
-      viewMore:{
-        ...this.stateObj.viewMore,
-        canViewMore: !this.stateObj.viewMore.canViewMore
-      }
-    })
-  }
- 
  
   paginateData(totalDataLength=0){
     this.stateObj.begin = ((this.stateObj.currentPage - 1) * this.stateObj.numberPerPage)
     this.stateObj.end = this.stateObj.begin + this.stateObj.numberPerPage
-    // this.stateObj.paginatedData = this.totalData.slice(this.stateObj.begin,this.stateObj.end)
     this.setStateObj({
       ...this.stateObj,
       numberOfPages: Math.ceil(totalDataLength / this.stateObj.numberPerPage),
       paginatedData: this.totalData
-      // paginatedData: this.totalData.slice(this.stateObj.begin,this.stateObj.end),
     })
   }
 

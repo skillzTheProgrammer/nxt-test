@@ -8,12 +8,11 @@ export const PaginationContainer = styled.div`
   align-items: center;
   margin-top: 20px;
   font-size: 14px;
-
 `
 export const ControlText = styled.p`
   font-weight: 500;
   font-size: 14px;
-  `
+`
 
 export const PageFlex = styled.div`
   display: flex;
